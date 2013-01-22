@@ -1,0 +1,6 @@
+Dane dostêpu do serwera MySQL
+Serwer: 	mysql51.iq.pl
+Login: 	michalkoch_java
+Has³o: 	7hxvhhw3k6
+Baza: 	michalkoch_java
+Pojemnoœæ: 	10,0 MB
