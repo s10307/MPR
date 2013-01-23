@@ -5,11 +5,12 @@ import managers.ModuleManager;
 public class main {
 	public static void main(String[] args) {
 		DBconnector db = new DBconnector();
-		ModuleManager ModMan = new ModuleManager();
+		ModuleManager ModuleManager = new ModuleManager();
 
 		db.connect();
 		System.out.println("Pierwotna:");
-		ModMan.studentsReadAll();
+		ModuleManager.modulesCreate();
+		ModuleManager.modulesReadAll();
 		/*student.studentsAdd("test", "guy", 666, "testing", 1);
 		System.out.println("Po Dodaniu:");
 		student.studentsReadAll();

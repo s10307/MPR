@@ -2,11 +2,11 @@ package managers;
 
 public interface ModuleManagerInterface {
 
-	public void studentsReadAll();
+	public void modulesReadAll();
 
-	public void studentsAdd(String firstName, String lastName, int yearOfBorn, String about, int idGroup);
+	public void modulesAdd(int module_id, String moduleName, int modulePrice, String moduleInfo, int moduleWeight);
 
-	public void studentsEdit(int idStudent, String firstName, String lastName, int yearOfBorn, String about, int idGroup);
+	public void modulesEdit(int module_id, String moduleName, int modulePrice, String moduleInfo, int moduleWeight);
 
-	public void studentsRemove(int idStudent);
+	public void moduleRemove(int module_id);
 }

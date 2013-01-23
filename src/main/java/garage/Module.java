@@ -40,5 +40,10 @@ public class Module implements ModuleInterface {
 	}
 	public void setModuleWeight(int moduleWeight) {
 		this.moduleWeight = moduleWeight;
-	}	
+	}
+	public void printModule() {
+		System.out.println("\tModule_");
+		System.out
+				.println("\tName: " + this.moduleName);
+	}
 }

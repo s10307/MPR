@@ -90,4 +90,10 @@ public class Tank implements TankInterface {
 		this.tank_id = tank_id;
 	}
 
+	public void printTank() {
+	}
+
+	public void printModuleList() {
+	}
+
 }

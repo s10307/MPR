@@ -2,11 +2,13 @@ package managers;
 
 public interface TankManagerInterface {
 	
-	public void groupsReadAll();
+	public void tanksReadAll();
 
-	public void groupAdd(String name, String about, int idStarosty);
+	public void tankAdd(int tank_id, String vehicleName , String vehicleCountryOfOrigin, String vehicleClass , int avgArmor, 
+			int avgArmorPenetration , double avgRateOfFire , int stockEnginePower , int yearOfProduction);
 
-	public void groupEdit(int idGroup, String name, String about, int idStarosty);
+	public void tankEdit(int tank_id, String vehicleName , String vehicleCountryOfOrigin, String vehicleClass , int avgArmor, 
+			int avgArmorPenetration , double avgRateOfFire , int stockEnginePower , int yearOfProduction);
 
-	public void groupRemove(int idGroup);
+	public void tankRemove(int tank_id);
 }

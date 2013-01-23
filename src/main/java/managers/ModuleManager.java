@@ -1,69 +1,77 @@
 package managers;
 
-import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
 
 import services.DBeditor;
 
 public class ModuleManager implements ModuleManagerInterface {
 
-	public void studentsReadAll() {
-		String query = "select * from students";
+	public void modulesReadAll() {
+		String query = "select * from modules";
 
 		DBeditor dbedit = new DBeditor();
 
-		ResultSet result = dbedit.tableViewer(query);
+		ResultSet result = dbedit.viewTable(query);
 
 		try {
-			System.out.println("idStud" + "\t" + "firstName" + "\t"
-					+ "lastName" + "\t" + "yearOfBorn" + "\t" + "idGroup"
-					+ "\t\t" + "about");
+			System.out.println("module_id" + "\t" + "moduleNamefirstName" + "\t"
+					+ "modulePrice" + "\t" + "moduleInfo" + "\t" + "moduleWeight");
 			while (result.next()) {
 				System.out.println(result.getString(1) + "\t"
-						+ result.getString(2) + "\t\t" + result.getString(3)
-						+ "\t\t" + result.getString(4) + "\t\t"
-						+ result.getString(6) + "\t\t" + result.getString(5));
+						+ result.getString(2) + "\t" + result.getString(3) + "\t" 
+						+ result.getString(4) + "\t" + result.getString(5));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void studentsAdd(String firstName, String lastName, int yearOfBorn,
-			String about, int idGroup) {
+	public void modulesAdd(int module_id, String moduleName, int modulePrice, String moduleInfo, int moduleWeight) {
 
-		String query = "INSERT INTO `students` (`firstName`,`lastName`,`yearOfBorn`,`about`,`idGroup`) VALUES ('"
-				+ firstName
-				+ "','"
-				+ lastName
-				+ "',"
-				+ yearOfBorn
-				+ ",'"
-				+ about + "'," + idGroup + ");";
+		String query = "INSERT INTO `modules` (`module_id`,`moduleName`,`modulePrice`,`moduleInfo`,`moduleWeight`) VALUES ('"
+				+ module_id	+ "','"
+				+ moduleName + "','"
+				+ modulePrice + "','"
+				+ moduleInfo + "'," 
+				+ moduleWeight + ");";
 
 		DBeditor dbedit = new DBeditor();
 
-		dbedit.tableEditor(query);
+		dbedit.editTable(query);
 	}
 
-	public void studentsEdit(int idStudent, String firstName, String lastName,
-			int yearOfBorn, String about, int idGroup) {
+	public void modulesEdit(int module_id, String moduleName, int modulePrice, String moduleInfo, int moduleWeight) {
 
-		String query = "UPDATE students SET `firstName` = '" + firstName
-				+ "', `lastName` = '" + lastName + "', `yearOfBorn` = "
-				+ yearOfBorn + ", `about` = '" + about + "', `idGroup` = "
-				+ idGroup + " WHERE `idStudent` = " + idStudent;
+		String query = "UPDATE modules SET `module_id` = '" + module_id	+ "', `moduleName` = '" + moduleName 
+				+ "', `modulePrice` = "	+ modulePrice + ", `moduleInfo` = '" + moduleInfo 
+				+ "', `moduleWeight` = "	+ moduleWeight + " WHERE `module_id` = " + module_id;
 
 		DBeditor dbedit = new DBeditor();
 
-		dbedit.tableEditor(query);
+		dbedit.editTable(query);
+	}
+	
+	public void modulesCreate(){
+		String query = "CREATE TABLE modules (" +
+				"module_id int AUTO_INCREMENT PRIMARY KEY," +
+				"moduleName varchar(20)," +
+				"modulePrice int," +
+				"moduleInfo varchar(60)," +
+				"moduleWeight int," +
+				"tank_id int," +
+				")";
+		
+		DBeditor dbedit = new DBeditor();
+		
+		dbedit.editTable(query);
 	}
 
-	public void studentsRemove(int idStudent) {
-		String query = "delete from students where idStudent = " + idStudent;
+	public void moduleRemove(int module_id) {
+		String query = "delete from modules where module_id = " + module_id;
 
 		DBeditor dbedit = new DBeditor();
 
-		dbedit.tableEditor(query);
+		dbedit.editTable(query);
 	}
 }
