@@ -1,12 +1,14 @@
 package managers;
 
+import garage.Module;
+
 public interface ModuleManagerInterface {
 
 	public void modulesReadAll();
 
-	public void modulesAdd(int module_id, String moduleName, int modulePrice, String moduleInfo, int moduleWeight);
+	public void modulesAdd(Module m);
 
-	public void modulesEdit(int module_id, String moduleName, int modulePrice, String moduleInfo, int moduleWeight);
+	public void modulesEdit(Module m);
 
 	public void moduleRemove(int module_id);
 }

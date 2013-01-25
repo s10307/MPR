@@ -10,6 +10,13 @@ public class Module implements ModuleInterface {
 	private String moduleInfo = "";
 	private int moduleWeight= 0;
 	
+	public Module(int module_id, String moduleName, int modulePrice, String moduleInfo, int moduleWeight){
+		this.module_id=module_id;
+		this.moduleName=moduleName;
+		this.modulePrice=modulePrice;
+		this.moduleInfo=moduleInfo;
+		this.moduleWeight=moduleWeight;
+	}
 	
 	public int getModule_id() {
 		return module_id;
@@ -40,10 +47,5 @@ public class Module implements ModuleInterface {
 	}
 	public void setModuleWeight(int moduleWeight) {
 		this.moduleWeight = moduleWeight;
-	}
-	public void printModule() {
-		System.out.println("\tModule_");
-		System.out
-				.println("\tName: " + this.moduleName);
 	}
 }

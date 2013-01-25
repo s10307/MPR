@@ -1,6 +1,8 @@
 package managers;
 
 
+import garage.Module;
+
 import java.sql.ResultSet;
 
 import services.DBeditor;
@@ -18,8 +20,8 @@ public class ModuleManager implements ModuleManagerInterface {
 			System.out.println("module_id" + "\t" + "moduleNamefirstName" + "\t"
 					+ "modulePrice" + "\t" + "moduleInfo" + "\t" + "moduleWeight");
 			while (result.next()) {
-				System.out.println(result.getString(1) + "\t"
-						+ result.getString(2) + "\t" + result.getString(3) + "\t" 
+				System.out.println(result.getString(1) + "\t\t"
+						+ result.getString(2) + "\t\t" + result.getString(3) + "\t\t" 
 						+ result.getString(4) + "\t" + result.getString(5));
 			}
 		} catch (Exception e) {
@@ -27,25 +29,25 @@ public class ModuleManager implements ModuleManagerInterface {
 		}
 	}
 
-	public void modulesAdd(int module_id, String moduleName, int modulePrice, String moduleInfo, int moduleWeight) {
+	public void modulesAdd(Module m) {
 
 		String query = "INSERT INTO `modules` (`module_id`,`moduleName`,`modulePrice`,`moduleInfo`,`moduleWeight`) VALUES ('"
-				+ module_id	+ "','"
-				+ moduleName + "','"
-				+ modulePrice + "','"
-				+ moduleInfo + "'," 
-				+ moduleWeight + ");";
+				+ m.getModule_id()	+ "','"
+				+ m.getModuleName() + "','"
+				+ m.getModulePrice() + "','"
+				+ m.getModuleInfo() + "'," 
+				+ m.getModuleWeight() + ");";
 
 		DBeditor dbedit = new DBeditor();
 
 		dbedit.editTable(query);
 	}
 
-	public void modulesEdit(int module_id, String moduleName, int modulePrice, String moduleInfo, int moduleWeight) {
+	public void modulesEdit(Module m) {
 
-		String query = "UPDATE modules SET `module_id` = '" + module_id	+ "', `moduleName` = '" + moduleName 
-				+ "', `modulePrice` = "	+ modulePrice + ", `moduleInfo` = '" + moduleInfo 
-				+ "', `moduleWeight` = "	+ moduleWeight + " WHERE `module_id` = " + module_id;
+		String query = "UPDATE modules SET `module_id` = '" + m.getModule_id()	+ "', `moduleName` = '" +m.getModuleName() 
+				+ "', `modulePrice` = "	+ m.getModulePrice() + ", `moduleInfo` = '" + m.getModuleInfo() 
+				+ "', `moduleWeight` = "	+ m.getModuleWeight() + " WHERE `module_id` = " + m.getModule_id();
 
 		DBeditor dbedit = new DBeditor();
 
@@ -58,8 +60,7 @@ public class ModuleManager implements ModuleManagerInterface {
 				"moduleName varchar(20)," +
 				"modulePrice int," +
 				"moduleInfo varchar(60)," +
-				"moduleWeight int," +
-				"tank_id int," +
+				"moduleWeight int" +
 				")";
 		
 		DBeditor dbedit = new DBeditor();

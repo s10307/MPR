@@ -1,14 +1,14 @@
 package managers;
 
+import garage.Tank;
+
 public interface TankManagerInterface {
 	
 	public void tanksReadAll();
 
-	public void tankAdd(int tank_id, String vehicleName , String vehicleCountryOfOrigin, String vehicleClass , int avgArmor, 
-			int avgArmorPenetration , double avgRateOfFire , int stockEnginePower , int yearOfProduction);
+	public void tanksAdd(Tank t);
 
-	public void tankEdit(int tank_id, String vehicleName , String vehicleCountryOfOrigin, String vehicleClass , int avgArmor, 
-			int avgArmorPenetration , double avgRateOfFire , int stockEnginePower , int yearOfProduction);
+	public void tanksEdit(Tank t);
 
-	public void tankRemove(int tank_id);
+	public void tanksRemove(int tank_id);
 }

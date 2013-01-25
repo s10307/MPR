@@ -16,6 +16,19 @@ public class Tank implements TankInterface {
 	private int stockEnginePower = 0;
 	private int yearOfProduction = 0;
 	
+	public Tank (int tank_id, String vehicleName, String vehicleCountryOfOrigin, String vehicleClass, int avgArmor, int avgArmorPenetration,
+	double avgRateOfFire, int stockEnginePower, int yearOfProduction){
+	this.tank_id=tank_id;
+	this.vehicleName=vehicleName;
+	this.vehicleCountryOfOrigin=vehicleCountryOfOrigin;
+	this.vehicleClass=vehicleClass;
+	this.avgArmor=avgArmor;
+	this.avgArmorPenetration=avgArmorPenetration;
+	this.avgRateOfFire=avgRateOfFire;
+	this.stockEnginePower=stockEnginePower;
+	this.yearOfProduction=yearOfProduction;
+	}
+	
 	
 	public String getVehicleName() {
 		return vehicleName;
@@ -88,12 +101,6 @@ public class Tank implements TankInterface {
 
 	public void setTank_id(int tank_id) {
 		this.tank_id = tank_id;
-	}
-
-	public void printTank() {
-	}
-
-	public void printModuleList() {
 	}
 
 }
