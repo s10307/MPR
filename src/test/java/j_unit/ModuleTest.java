@@ -32,12 +32,13 @@ public class ModuleTest {
 
 	@Test
 	public void testGetModuleName() {
-		fail("Not yet implemented");
+		assertEquals("modul", m.getModuleName());
 	}
 
 	@Test
 	public void testSetModuleName() {
-		fail("Not yet implemented");
+		m.setModuleName("Inne name");
+		assertEquals("Inne name", m.getModuleName());
 	}
 
 	@Test

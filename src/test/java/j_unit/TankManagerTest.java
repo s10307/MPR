@@ -19,6 +19,7 @@ public class TankManagerTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		tMan.tanksAdd(t1);
 	}
 
 	@After
@@ -28,22 +29,21 @@ public class TankManagerTest {
 	@Test
 	public void testTanksAdd() {
 		tMan.tanksAdd(t1);
-		//tMan.
 	}
 
 	@Test
 	public void testTanksEdit() {
-		fail("Not yet implemented");
+		tMan.tanksEdit(t2);
 	}
 
 	@Test
 	public void testTanksCreate() {
-		fail("Not yet implemented");
+		tMan.tanksCreate();
 	}
 
 	@Test
 	public void testTankRemove() {
-		fail("Not yet implemented");
+		tMan.tanksRemove(1);
 	}
 
 }

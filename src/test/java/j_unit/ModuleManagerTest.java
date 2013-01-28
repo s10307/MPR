@@ -10,6 +10,7 @@ public class ModuleManagerTest {
 
 	@Before
 	public void setUp() throws Exception {
+		
 	}
 
 	@After
